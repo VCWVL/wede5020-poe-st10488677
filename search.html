@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <!-- Link to your main CSS file -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Simple styles for search results */
+        .results-container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .product-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            background-color: #fff;
+        }
+        .product-item img {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+        }
+        .product-item-info h3 {
+            margin: 0 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <!--Navigation bar-->
+    <nav>
+        <ul style="list-style: none; padding: 10px; margin: 0; display: flex; background-color: #f1f1f1;">
+            <li style="margin-right: 20px;"><a href="index.html">Home</a></li>
+            <li style="margin-right: 20px;"><a href="about.html">About</a></li>
+            <li style="margin-right: 20px;"><a href="contact.html">Contact</a></li>
+            <li style="margin-right: 20px;"><a href="products.html">Products</a></li>
+            <li><a href="enquiry.html">Enquiry</a></li>
+        </ul>
+    </nav>
+    <hr>
+
+    <div class="results-container">
+        <h1 id="results-heading">Search Results</h1>
+        <div id="results-list"></div>
+        <p id="no-results-msg" style="display: none;">No products found matching your search.</p>
+    </div>
+
+    <footer style="text-align: center; padding: 10px; background-color: #f1f1f1; margin-top: 20px;">
+        <p>&copy; 2024 SONY. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const allProducts = [
+                { name: 'Playstation 5 - White Console', price: '€575.00', image: '_images/ps5_2.avif' },
+                { name: 'Playstation 5 PS5 1TB Slim White Console', price: '€549.99', image: '_images/sony-playstation-5-slim-digital.avif' },
+                { name: 'Playstation 5 Pro PS5 1TB White Console', price: '€776.00', image: '_images/ps5_pro2.jpg' },
+                { name: 'PlayStation 5 Dualsense Wireless Controllers', price: '€74.99 each', image: '_images/ps5_controller2.jpg' },
+                { name: 'PULSE Elite™ Wireless Headset Sony PULSE Elite - White - Wireless Headset - Sony PlayStation 5', price: '€149.90 each', image: '_images/ps5_headset2.avif' },
+                { name: 'PS5 Console Covers', price: '€64.99 each', image: '_images/ps5_covers2.jpg' },
+                { name: 'PlayStation VR2', price: '€448.00', image: '_images/ps_vr.jpg' },
+                { name: 'HD Camera', price: '€59.99 each', image: '_images/hd_camera.webp' },
+                { name: 'Playstation 4 500GB', price: '€349.99', image: '_images/ps4_original22.jpg' },
+                { name: 'Playstation 4 - Slim - 500GB Black Console', price: '€299.99', image: '_images/PS4_slim2.jpg' },
+                { name: 'Playstation 4 Pro - 1TB Black Console', price: '€399.99', image: '_images/PS4_pro2.jpg' },
+                { name: 'PlayStation 4 DualShock Wireless Controllers', price: '€59.99 each', image: '_images/ps4_controller2.jpeg' },
+                { name: 'PlayStation Camera for PS4', price: '€49.99 each', image: '_images/ps4_camera.jpg' }
+            ];
+
+            const resultsList = document.getElementById('results-list');
+            const resultsHeading = document.getElementById('results-heading');
+            const noResultsMsg = document.getElementById('no-results-msg');
+
+            const params = new URLSearchParams(window.location.search);
+            const query = params.get('query')?.toLowerCase().trim();
+
+            if (query) {
+                resultsHeading.textContent = `Search Results for "${params.get('query')}"`;
+                const filteredProducts = allProducts.filter(product => product.name.toLowerCase().includes(query));
+
+                if (filteredProducts.length > 0) {
+                    filteredProducts.forEach(product => {
+                        const productEl = document.createElement('div');
+                        productEl.className = 'product-item';
+                        productEl.innerHTML = `
+                            <img src="${product.image}" alt="${product.name}">
+                            <div class="product-item-info">
+                                <h3>${product.name}</h3>
+                                <p><strong>PRICE:</strong> ${product.price}</p>
+                                <a href="products.html">View Product</a>
+                            </div>
+                        `;
+                        resultsList.appendChild(productEl);
+                    });
+                } else {
+                    noResultsMsg.style.display = 'block';
+                }
+            } else {
+                resultsHeading.textContent = 'Please enter a search term.';
+            }
+        });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,281 @@
+ /* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure focus outlines are visible for accessibility */
+*:focus {
+  outline: 2px solid #0070d1; /* PlayStation blue */
+  outline-offset: 2px;
+}
+
+/* Base Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: #ffffff;
+  background: #0d0d0d; /* Dark background */
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #0073e6;
+}
+
+a:hover {
+  color: #005bb5;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+button {
+  font-size: 1rem;
+  padding: 10px 20px;
+  background-color: #0070d1;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #005bb5;
+}
+
+/* Layout Structure */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+header, footer {
+  background: #222;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  margin: 10px 0;
+}
+
+.cart-container {
+  display: none; /* Hidden initially */
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 350px;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.95);
+  color: white;
+  box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+  padding: 20px;
+  z-index: 999;
+}
+.cart-container.active {
+  display: block; /* Shows when clicked */
+}
+
+
+/* Visual Styles */
+.card {
+  background: white;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  button {
+    padding: 8px 15px;
+  }
+}
+
+
+
+
+/* Relative Units */
+h1 {
+  font-size: 2rem; /* scales with base font size */
+}
+h2 {
+  font-size: 1.5rem;
+}
+p {
+  font-size: 1em;
+}
+
+/* Responsive Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Enquiry Form Styles */
+form.enquiry-form {
+  background: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+form.enquiry-form label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #222;
+}
+
+form.enquiry-form input,
+form.enquiry-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 100%;
+  resize: vertical;
+}
+
+form.enquiry-form input:focus,
+form.enquiry-form textarea:focus {
+  border-color: #0073e6;
+  outline: none;
+}
+
+form.enquiry-form button[type="submit"] {
+  align-self: flex-end;
+  margin-top: 10px;
+}
+header {
+  background: linear-gradient(90deg, #003791, #0070d1);
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+/* Modal styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #1c1c1c;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 400px;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: scale(0.8);}
+  to {opacity: 1; transform: scale(1);}
+}
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  padding: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+body {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.ps-form button {
+  margin-top: 15px;
+  width: 100%;
+  background: linear-gradient(90deg, #005eff, #00aaff);
+  color: white;
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px rgba(0, 112, 209, 0.6);
+}
+
+.ps-form button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 112, 209, 1);
+}
+
+.ps-form input:focus,
+.ps-form textarea:focus,
+.ps-form select:focus {
+  outline: none;
+  border-color: #00aaff;
+  box-shadow: 0 0 10px #0070d1;
+  transition: 0.2s ease-in-out;
+}
+

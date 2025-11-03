@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Product page</title>
+     <!-- Link to your CSS file -->
+     <link rel="stylesheet" href="css/styleproducts.css">
+
+</head>
+<body>
+        <!--Navigation bar-->
+    <nav>
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex;">
+            <li style="margin-right: 20px;"><a href="index.html">Home</a></li>
+            <li style="margin-right: 20px;"><a href="about.html">About</a></li>
+            <li style="margin-right: 20px;"><a href="contact.html">Contact</a></li>
+            <li style="margin-right: 20px;"><a href="products.html">Products</a></li>
+            <li><a href="enquiry.html">enquiry</a></li>
+        </ul>
+    </nav>
+    <hr>   
+    <h1>PRODUCTS</h1>
+<hr>
+         <!--search bar-->
+    <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+        <form action="search.html" method="get" style="display: inline-block;">
+        <input type="text" name="query" placeholder="Search..." style="width: 300px;">
+     <button type="submit">Search</button>
+    </form>
+    <a href="#" id="cart-icon" title="View Cart" style="display: inline-flex; align-items: center; cursor: pointer;">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0070d1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h7.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <span style="margin-left: 6px;">Cart</span>
+    </a>
+    </div>
+     <hr>
+      <!-- Shopping cart section -->
+<style>
+    #cart {
+        display: none; /* Hidden by default */
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 350px;
+        max-height: 80vh;
+        overflow-y: auto;
+        background-color: rgb(8, 8, 8);
+        border: 1px solid #090909;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        border-radius: 8px;
+        z-index: 1000;
+    }
+</style>
+<div id="cart" style="padding:16px;">
+     <h2>Your Cart</h2>
+     <ul id="cart-items"></ul>
+     <p id="cart-empty-msg">Your cart is empty.</p>
+</div>
+
+
+
+<hr>
+<!-- Product listings -->
+<div class="product-list">
+    <div class="product-item" data-name="Playstation 5 - White Console" data-price="€575.00">
+        <img src="_images/ps5_2.avif" alt="Playstation 5" width="400" height="300">
+        <p><strong>PRODUCT:</strong> Playstation 5 - White Console</p>
+        <p><strong>PRICE:</strong> €575.00</p>
+        <p>In stock</p>
+        <button type="button" class="add-to-cart">Add to cart</button>
+    </div>
+    <hr>
+    <div class="product-item" data-name="Playstation 5 PS5 1TB Slim White Console" data-price="€549.99">
+        <img src="_images/sony-playstation-5-slim-digital.avif" alt="Playstation 5 Slim" width="400" height="300">
+        <p><strong>PRODUCT:</strong> Playstation 5 PS5 1TB Slim White Console</p>
+        <p><strong>PRICE:</strong> €549.99</p>
+        <p>In stock</p>
+        <button type="button" class="add-to-cart">Add to cart</button>
+    </div>
+    <hr>
+    <div class="product-item" data-name="Playstation 5 Pro PS5 1TB White Console" data-price="€776.00">
+        <img src="_images/ps5_pro2.jpg" alt="Playstation 5 Pro" width="400" height="300">
+        <p><strong>PRODUCT:</strong> Playstation 5 Pro PS5 1TB White Console</p>
+        <p><strong>PRICE:</strong> €776.00</p>
+        <p>In stock</p>
+        <button type="button" class="add-to-cart">Add to cart</button>
+    </div>
+    <hr>
+    <div class="product-item" data-name="PlayStation 5 Dualsense Wireless Controllers" data-price="€74.99">
+        <img src="_images/ps5_controller2.jpg" alt="Playstation 5 DualSense controller" width="400" height="300">
+        <p><strong>PRODUCT:</strong> PlayStation 5 Dualsense Wireless Controllers</p>
+        <p><strong>PRICE:</strong> €74.99 each</p>
+        <p>In stock</p>
+        <button type="button" class="add-to-cart">Add to cart</button>
+    </div>
+    <hr>
+    <div class="product-item" data-name="PULSE Elite Wireless Headset" data-price="€149.90">
+        <img src="_images/ps5_headset2.avif" alt="PULSE Elite Wireless Headset" width="400" height="300">
+        <p><strong>PRODUCT:</strong> PULSE Elite™ Wireless Headset Sony PULSE Elite - White - Wireless Headset - Sony PlayStation 5</p>
+        <p><strong>PRICE:</strong> €149.90 each</p>
+        <p>In stock</p>
+        <button type="button" class="add-to-cart">Add to cart</button>
+    </div>
+    <hr>
+    <div class="product-item" data-name="PS5 Console Covers" data-price="€64.99">
+        <img src="_images/ps5_covers2.jpg" alt="PS5 Console Covers" width="400" height="300">
+        <p><strong>PRODUCT:</strong> PS5 Console Covers</p>
+        <p><strong>PRICE:</strong> €64.99 each</p>
+        <p>In stock</p>
+        <button type="button" class="add-to-cart">Add to cart</button>
+    </div>
+    <hr>
+    <div class="product-item" data-name="PlayStation VR2" data-price="€448.00">
+        <img src="_images/ps_vr.jpg" alt="Playstation VR2" width="500" height="300">
+        <p><strong>PRODUCT:</strong> PlayStation VR2</p>
+        <p><strong>PRICE:</strong> €448.00</p>
+        <p>In stock</p>
+        <button type="button" class="add-to-cart">Add to cart</button>
+    </div>
+    <hr>
+    <div class="product-item" data-name="HD Camera" data-price="€59.99">
+        <img src="_images/hd_camera.webp" alt="HD Camera" width="500" height="300">
+        <p><strong>PRODUCT:</strong> HD Camera</p>
+        <p><strong>PRICE:</strong> €59.99 each</p>
+        <p>In stock</p>
+        <button type="button" class="add-to-cart">Add to cart</button>
+    </div>
+    <hr>
+    <div class="product-item" data-name="Playstation 4 500GB" data-price="€349.99">
+        <img src="_images/ps4_original22.jpg" alt="Playstation 4 original" width="500" height="400">
+        <p><strong>PRODUCT:</strong> Playstation 4 500GB</p>
+        <p><strong>PRICE:</strong> €349.99</p>
+        <p>In stock</p>
+        <button type="button" class="add-to-cart">Add to cart</button>
+    </div>
+    <hr>
+    <div class="product-item" data-name="Playstation 4 - Slim - 500GB Black Console" data-price="€299.99">
+        <img src="_images/PS4_slim2.jpg" alt="Playstation 4 slim" width="700" height="350">
+        <p><strong>PRODUCT:</strong> Playstation 4 - Slim - 500GB Black Console</p>
+        <p><strong>PRICE:</strong> €299.99</p>
+        <p>In stock</p>
+        <button type="button" class="add-to-cart">Add to cart</button>
+    </div>
+    <hr>
+    <div class="product-item" data-name="Playstation 4 Pro - 1TB Black Console" data-price="€399.99">
+        <img src="_images/PS4_pro2.jpg" alt="Playstation 4 Pro" width="700" height="350">
+        <p><strong>PRODUCT:</strong> Playstation 4 Pro - 1TB Black Console</p>
+        <p><strong>PRICE:</strong> €399.99</p>
+        <p>In stock</p>
+        <button type="button" class="add-to-cart">Add to cart</button>
+    </div>
+    <hr>
+    <div class="product-item" data-name="PlayStation 4 DualShock Wireless Controllers" data-price="€59.99">
+        <img src="_images/ps4_controller2.jpeg" alt="PS4 Controller" width="500" height="300">
+        <p><strong>PRODUCT:</strong> PlayStation 4 DualShock Wireless Controllers</p>
+        <p><strong>PRICE:</strong> €59.99 each</p>
+        <p>In stock</p>
+        <button type="button" class="add-to-cart">Add to cart</button>
+    </div>
+    <hr>
+    <div class="product-item" data-name="PlayStation Camera for PS4" data-price="€49.99">
+        <img src="_images/ps4_camera.jpg" alt="PS4 Camera" width="500" height="300">
+        <p><strong>PRODUCT:</strong> PlayStation Camera for PS4</p>
+        <p><strong>PRICE:</strong> €49.99 each</p>
+        <p>In stock</p>
+        <button type="button" class="add-to-cart">Add to cart</button>
+    </div>
+    <hr>
+</div>
+<footer style="text-align: center; padding: 10px; background-color: #f1f1f1; margin-top: 20px;">
+    <p>&copy; 2024 SONY. All rights reserved.</p>
+</footer>
+<script src="js/main.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const cartItems = [];
+        const cartList = document.getElementById('cart-items');
+        const cartEmptyMsg = document.getElementById('cart-empty-msg');
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        const cartContainer = document.getElementById('cart');
+        const cartIcon = document.getElementById('cart-icon');
+
+
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', (event) => {
+                const productItem = event.target.closest('.product-item');
+                const productName = productItem.dataset.name;
+                const productPrice = productItem.dataset.price;
+
+                cartItems.push({ name: productName, price: productPrice });
+                updateCartDisplay();
+                cartContainer.style.display = 'block'; // Show cart when item is added
+            });
+        });
+
+        cartIcon.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent the link from navigating
+            const isCartVisible = cartContainer.style.display === 'block';
+            cartContainer.style.display = isCartVisible ? 'none' : 'block';
+        });
+
+        // Optional: Close cart if clicking outside of it
+        document.addEventListener('click', (event) => {
+            if (!cartContainer.contains(event.target) && !cartIcon.contains(event.target) && !event.target.classList.contains('add-to-cart')) {
+                cartContainer.style.display = 'none';
+            }
+        });
+
+        function updateCartDisplay() {
+            cartList.innerHTML = ''; // Clear current list
+            if (cartItems.length === 0) {
+                cartEmptyMsg.style.display = 'block';
+            } else {
+                cartEmptyMsg.style.display = 'none';
+                cartItems.forEach(item => {
+                    const li = document.createElement('li');
+                    li.textContent = `${item.name} - ${item.price}`;
+                    cartList.appendChild(li);
+                });
+            }
+        }
+    });
+</script>
+</body>
+</html> 

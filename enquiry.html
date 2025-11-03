@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquiry page</title>
+     <!-- Link to your CSS file -->
+  <link rel="stylesheet" href="css/styleenquiry.css">
+</head>
+<body>
+         <!--Navigation bar-->
+    <nav>
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex;">
+            <li style="margin-right: 20px;"><a href="index.html">Home</a></li>
+            <li style="margin-right: 20px;"><a href="about.html">About</a></li>
+            <li style="margin-right: 20px;"><a href="contact.html">Contact</a></li>
+            <li style="margin-right: 20px;"><a href="products.html">Products</a></li>
+            <li><a href="enquiry.html">enquiry</a></li>
+        </ul>
+    </nav>
+    <hr>   
+      <h1>PlayStation Enquiry Center</h1>
+    <p>Contact us with your questions or feedback.</p>
+  </header>
+
+  <main>
+
+    <section>
+      <h2>Submit an Enquiry</h2>
+      <form action="/submit-enquiry" method="POST">
+        
+        <label for="name">Full Name </label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email Address </label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="topic">Enquiry Topic </label><br>
+        <select id="topic" name="topic" required>
+          <option value="">-- Select a Topic --</option>
+          <option value="account">Account & Security</option>
+          <option value="billing">Billing & Payments</option>
+          <option value="technical">Technical Support</option>
+          <option value="games">Games & Subscriptions</option>
+          <option value="feedback">Feedback</option>
+          <option value="other">Other</option>
+        </select><br><br>
+
+        <label for="message">Your Message </label><br>
+        <textarea id="message" name="message" rows="6" cols="50" required></textarea><br><br>
+
+        <input type="submit" value="Submit Enquiry">
+      </form>
+    </section>
+
+    <section>
+      <h2>Support Links</h2>
+      <ul>
+        <li><a href="https://www.playstation.com/support/" target="_blank">PlayStation Support Center</a></li>
+        <li><a href="https://status.playstation.com/" target="_blank">PSN Network Status</a></li>
+        <li><a href="https://www.playstation.com/account/" target="_blank">Manage Your Account</a></li>
+        <li><a href="https://www.playstation.com/help/subscriptions/" target="_blank">Subscriptions Help</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Frequently Asked Questions</h2>
+      <ul>
+        <li><a href="https://www.playstation.com/help/hardware/ps5/" target="_blank">Setting Up Your PS5</a></li>
+        <li><a href="https://www.playstation.com/help/account/password-reset/" target="_blank">Reset Your PSN Password</a></li>
+        <li><a href="https://www.playstation.com/help/billing/refund-request/" target="_blank">Request a Refund</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Connect With Us</h2>
+      <ul>
+        <li><a href="https://twitter.com/PlayStation" target="_blank">Twitter</a></li>
+        <li><a href="https://www.facebook.com/PlayStation" target="_blank">Facebook</a></li>
+        <li><a href="https://www.instagram.com/PlayStation" target="_blank">Instagram</a></li>
+        <li><a href="https://www.youtube.com/PlayStation" target="_blank">YouTube</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Sony Interactive Entertainment LLC. All rights reserved.</p>
+    <p>PlayStation and the "PS" logo are trademarks of Sony Interactive Entertainment Inc.</p>
+  </footer>
+<script src="js/main.js"></script>
+</body>
+</html>
